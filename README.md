@@ -1,4 +1,5 @@
-# matrix_mul-pipeline-
+# systolic-array-matrix-multiplier
+
 
 
 

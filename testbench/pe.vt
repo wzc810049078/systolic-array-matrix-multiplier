@@ -1,0 +1,56 @@
+
+`timescale 1 ps/ 1 ps
+module pe_vlg_tst();
+// constants                                           
+// general purpose registers
+
+reg clk;
+reg clr;
+reg rst_n;
+reg [7:0] x_i;
+reg [7:0] y_i;
+                                           
+wire [17:0]  pe_out;
+wire [7:0]  x_o;
+wire [7:0]  y_o;
+
+                        
+pe i1 (
+
+	.clk(clk),
+	.clr(clr),
+	.pe_out(pe_out),
+	.rst_n(rst_n),
+	.x_i(x_i),
+	.x_o(x_o),
+	.y_i(y_i),
+	.y_o(y_o)
+);
+initial                                                
+begin                                                  
+clk = 0;
+forever #10 clk = ~clk;
+                   
+end                                                    
+initial                                                
+begin                                                  
+rst_n = 1;
+#5;
+rst_n = 0;
+#10;
+rst_n = 1;
+#5;
+y_i = 8'sd127;
+x_i = -8'sd127;
+#20;
+y_i = 8'sd127;
+x_i = -8'sd127;
+#20;  
+y_i = 8'sd127;
+x_i = -8'sd127;
+#100;
+$stop;                   
+end
+                                                     
+endmodule
+

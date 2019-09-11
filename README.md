@@ -17,7 +17,7 @@ Non-pipe version will output all results after all values are computed.
 一个脉动阵列的3x3矩阵乘法器
 
 
-pipe版可计算完就输出对应值，一周期后即可激素送入要计算的下个矩阵的值。
+pipe版可计算完就输出对应值，一周期后即可送入要计算的下个矩阵的值。
 
 
 
